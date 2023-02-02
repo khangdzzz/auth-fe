@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "version": "0.0.1",
+  "name": "abo",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "setup": "yarn setup:create-env",
+    "setup:create-env": "cp .env.template .env",
+    "start": "env $(grep -v '^#' ./.env) nuxt start",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "nuxt": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "volta": {
+    "node": "16.19.0",
+    "yarn": "1.22.17"
+  }
+}
