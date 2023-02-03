@@ -2,8 +2,22 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Abo',
-      meta: [{name: 'description', content: 'Abo site'}]
+      meta: [{ name: 'description', content: 'Abo site' }]
     }
+  },
+  modules: [
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: [
+          'defineStore',
+          'storeToRefs'
+        ]
+      }
+    ],
+  ],
+  imports: {
+    dirs: ['store']
   },
   runtimeConfig: {
     public: {
