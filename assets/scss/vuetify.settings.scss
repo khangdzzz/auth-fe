@@ -1,4 +1,14 @@
 @use 'vuetify/settings' with (
-   // Reference vuetify/lib/settings
-   $font-size-root: 14px,
+  // Reference vuetify/lib/settings
+  $utilities: false,
+  $color-pack: false,
+  $font-size-root: 14px,
+  $application-color: rgb(var(--v-theme-on-background)),
+  $application-background: #FFFFFF,
+  $button-disabled-opacity: 1,
+  $button-elevation: ('default': 0, 'hover': 2, 'active': 4),
+  $button-font-weight: 700,
+  $button-plain-opacity: 1,
+  $button-text-transform: 'none',
+  $input-font-size: 0.875rem,
 );
