@@ -7,13 +7,17 @@
     "dev": "nuxt dev",
     "setup": "yarn setup:create-env",
     "setup:create-env": "cp .env.template .env",
+    "lint": "eslint --ext .ts,.js,.vue .",
     "start": "env $(grep -v '^#' ./.env) nuxt start",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@types/node": "^18.13.0",
+    "eslint": "^8.33.0",
     "nuxt": "^3.1.1"
   },
   "engines": {
