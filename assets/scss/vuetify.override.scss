@@ -78,6 +78,7 @@
     padding-bottom: 40px;
     border-radius: 8px;
     background-color: rgb(var(--v-theme-on-primary));
+    max-height: inherit;
   }
   .v-table__wrapper::-webkit-scrollbar {
     display: none;
