@@ -15,6 +15,16 @@ function createAPI (baseURL: string) {
   return ky.create({
     prefixUrl: baseURL,
     timeout: 30000,
-    credentials: 'include'
+    credentials: 'include',
+    hooks: {
+      afterResponse: [
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        (req, options, res) => {
+          if (res.status === 401) {
+            window.location.href = '/login'
+          }
+        }
+      ]
+    }
   })
 }

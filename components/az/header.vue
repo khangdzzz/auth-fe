@@ -1,14 +1,23 @@
+<script lang="ts" setup>
+const authenticationStore = useAuthenticationStore()
+const { currentUser } = storeToRefs(authenticationStore)
+
+async function logout () {
+  await authenticationStore.logout()
+}
+</script>
 <template>
   <header class="az-header">
     <nuxt-link to="/" class="logo">
       <img src="/images/logo.png" class="image" alt="logo">
     </nuxt-link>
-    <div class="actions">
+    <v-spacer />
+    <div v-if="!!currentUser.isLoggedIn" class="actions">
       <nuxt-link to="/" class="action -account">
         <v-icon icon="mdi-account-circle-outline" class="icon" />
-        <span class="name">Abo Admin</span>
+        <span class="name">{{ currentUser.name }}</span>
       </nuxt-link>
-      <nuxt-link to="/" class="action -logout">
+      <nuxt-link external class="action -logout" @click="logout">
         ログアウト
       </nuxt-link>
     </div>

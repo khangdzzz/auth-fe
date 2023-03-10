@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+const authenticationStore = useAuthenticationStore()
+const { currentUser } = storeToRefs(authenticationStore)
+
+if (!currentUser.value.isLoggedIn) {
+  await authenticationStore.fetchMe()
+}
+</script>
 <template>
   <v-app class="layout-default">
     <v-app-bar>
