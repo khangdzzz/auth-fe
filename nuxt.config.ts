@@ -4,8 +4,8 @@ export default defineNuxtConfig({
   ssr: false,
   app: {
     head: {
-      title: 'Abo',
-      meta: [{ name: 'description', content: 'Abo site' }]
+      title: 'game',
+      meta: [{ name: 'description', content: ' site' }]
     }
   },
   css: [
@@ -48,6 +48,10 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  sourcemap: {
+    server: false,
+    client: false
   },
   runtimeConfig: {
     public: {

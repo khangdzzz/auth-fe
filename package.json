@@ -11,12 +11,14 @@
     "start": "env $(grep -v '^#' ./.env) nuxt start",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "staging:delete-tag": "git fetch --tags && git push origin --delete $(git tag -l 'staging-*') || true && git fetch origin --prune 'refs/tags/*:refs/tags/*'",
-    "staging:deploy": "yarn staging:delete-tag && TAG=`echo staging-$(date +%Y%m%d-%H%M%S)` && git tag $TAG && git push origin $TAG"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/composition-api": "^0.33.1",
     "@pinia/nuxt": "^0.4.6",
+    "@types/jsonwebtoken": "^9.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "jwt-decode": "^3.1.2",
     "ky": "^0.33.2",
     "ky-universal": "^0.11.0",
     "pinia": "^2.0.30",
